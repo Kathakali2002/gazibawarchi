@@ -11,9 +11,87 @@ body {
     margin-left: auto;
     max-width: 35%;
 }
+
 /* Media query for desktop screens (e.g., screens larger than 768px) */
 @media (min-width: 768px) {
   .logo-img {
     width: 20%; /* 20% for desktop view */
   }
 }
+/* Home, Menu, Service Catalogue, Gallery, Find Us, Contact Us, Privacy Policy */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(245, 245, 220, 0.5);
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden off-screen to the left */
+    height: 100%;
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: left 0.3s ease-in-out; /* Smooth sliding animation */
+}
+
+.nav-links.active {
+    left: 0; /* Slides into view when active class is added */
+}
+
+.mobile-nav-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1001;
+    display: block; /* Visible on mobile */
+    color: #333;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        position: static;
+        display: flex;
+        left: auto;
+        height: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .mobile-nav-toggle {
+        display: none; /* Hide the arrow button on desktop */
+    }
+}
+
