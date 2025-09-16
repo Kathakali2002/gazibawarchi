@@ -9,5 +9,11 @@ body {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    max-width: 20%;
+    max-width: 35%;
+}
+/* Media query for desktop screens (e.g., screens larger than 768px) */
+@media (min-width: 768px) {
+  .logo-img {
+    width: 20%; /* 20% for desktop view */
+  }
 }
